@@ -1,7 +1,7 @@
 <label>{{serverName}}</label>
 
 <input class="form-control" type="text" (input)="onUpdateServerName($event)">
-
+<input class="form-control" type="text" [(ngModel)]="serverName" />
 <button class='btn btn-primary' [disabled]="!allowNewSErver" (click)="onCreateServer()">
   Add server
 </button>
@@ -9,7 +9,12 @@
 <p [innerText]="allowNewSErver"></p> <!--  байндинг свойств через свойтва элемента dom -->
 
 <!--<p>{{allowNewSErver}}</p>  байндинг свойств через интерполяцию строк -->
-<p>{{serverCreationStatus}}</p>
+<!-- <p>{{serverCreationStatus}}</p> -->
 
-<!-- <app-server></app-server>
-<app-server></app-server> -->
+<p *ngIf="serverCreated"> Server was created with {{serverName}} </p>
+<!-- <p *ngIf="serverCreated; else noServer"> Server was created with {{serverName}} </p>
+<ng-template #noServer>
+  <p> No server was created</p>
+</ng-template> -->
+
+<app-server *ngFor="let server of servers"></app-server>
