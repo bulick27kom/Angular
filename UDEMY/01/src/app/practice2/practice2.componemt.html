@@ -1,5 +1,12 @@
 <div class="mainDiv">
   <button class="button-primary" (click)="onShowDetails()">Show details</button>
+  <!-- <button class="button-primary" (click)="detailsAreVisible = !detailsAreVisible">Show details</button> -->
 
   <p *ngIf="detailsAreVisible">{{details}}</p>
+
+  <!-- <p *ngFor="let mes of log"></p> -->
+  <div *ngFor="let mes of log; let i = index" [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'} "
+    [ngClass]="{'white-text': i >= 4}">
+    {{mes}}
+  </div>
 </div>
