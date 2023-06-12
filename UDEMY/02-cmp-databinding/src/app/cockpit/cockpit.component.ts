@@ -31,14 +31,14 @@ export class CockpitComponent {
 
     this.serverCreated.emit({
       serverName: nameinput.value,
-      serverContent: this.newServerContent,
+      serverContent: this.serverContentInput.nativeElement.value,
     });
   }
 
   onAddBlueprint(nameinput: HTMLInputElement) {
     this.bluePrintCreated.emit({
       serverName: nameinput.value,
-      serverContent: this.newServerContent,
+      serverContent: this.serverContentInput.nativeElement.value,
     });
   }
 }

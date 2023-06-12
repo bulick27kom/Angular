@@ -4,8 +4,14 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click) = "onChangeFirst()">Change first element</button>
       <app-server-element *ngFor="let serverElement of serverElements; let i = index" [srvElement]="serverElement"
-        [srvCounter]="i"></app-server-element>
+        [srvCounter]="i" [name] = "serverElement.name">
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
     </div>
   </div>
 </div>
