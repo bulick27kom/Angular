@@ -1,5 +1,20 @@
-<app-game-control (changeCounter)="onGcCounterChanged($event)"></app-game-control>
-<hr>
-<p>{{gcCounter}}</p>
-<app-odd></app-odd>
-<app-even [incomingCounter]="gcCounter"></app-even>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-game-control (changeCounter)="onGcCounterChanged($event)"></app-game-control>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6">
+            <label>Odd component</label>
+            <app-odd *ngFor="let item of oddArray" [oddCounter]="item"></app-odd>
+        </div>
+        <div class="col-xl-6">
+            <label>Event component</label>
+            <app-even *ngFor="let item of evenArray" [evenCounter]="item"></app-even>
+        </div>
+    </div>
+</div>
