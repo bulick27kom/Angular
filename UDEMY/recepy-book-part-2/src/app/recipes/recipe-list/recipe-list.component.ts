@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -29,4 +29,10 @@ export class RecipeListComponent {
       'https://images.squarespace-cdn.com/content/v1/5190d201e4b0e86c59643db1/4199a15b-4eb2-4d60-b5dc-2831e47b8b8f/frbreakfast_vegan_healthy_eat-image-kybe8oy8.jpg'
     ),
   ];
+
+  @Output() selectedRecipe = new EventEmitter<Recipe>();
+
+  onRecipeSelected(recipe: Recipe) {
+    this.selectedRecipe.emit(recipe);
+  }
 }

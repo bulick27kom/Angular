@@ -14,4 +14,23 @@ export class ShoppingList {
     new Ingredient('Ingedient 4', 40),
     new Ingredient('Ingedient 5', 50),
   ];
+  ingredientElementClicked = new Ingredient('', 0);
+
+  onAddingredient(ingredien: Ingredient) {
+    if (ingredien.name !== '' && ingredien.amount !== 0) {
+      this.ingredients.push(ingredien);
+    }
+  }
+  onClearIngredients() {
+    this.ingredients = [];
+  }
+
+  onIngredientClick(ingredien: Ingredient) {
+    this.ingredientElementClicked = ingredien;
+  }
+
+  onDeleteIngredient(ingredientToDel: Ingredient) {
+    this.ingredients.splice(this.ingredients.indexOf(ingredientToDel), 1);
+    console.log(this.ingredients);
+  }
 }
