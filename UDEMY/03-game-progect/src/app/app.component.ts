@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  gcCounter: number;
+  oddArray: number[] = [];
+  evenArray: number[] = [];
 
-  onGcCounterChanged(counter: number) {
-    this.gcCounter = counter;
+  onGcCounterChanged(event) {
+    if (event % 2 === 0) {
+      this.oddArray.push(event);
+    } else {
+      this.evenArray.push(event);
+    }
   }
 }
