@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   gcCounter: number;
 
-  onGcCounterChanged(event){
-    this.gcCounter = event
+  onGcCounterChanged(counter: number) {
+    this.gcCounter = counter;
   }
 }
