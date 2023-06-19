@@ -11,6 +11,25 @@
                         {{odd}}
                     </li>
                 </div>
+
+                <!-- пример использования структурной директивы без * -->
+                <!-- <ng-template [ngIf]="onlyOdd">
+                    <div>
+                        <li class="list-group-item" *ngFor="let odd of oddNumbers" [ngClass]="{odd: odd % 2 !== 0}"
+                            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'green' : 'transparent'}">
+                            {{odd}}
+                        </li>
+                    </div>
+                </ng-template> -->
+
+                <!-- использование кастомной терективы  -->
+                <div *appUnless="!onlyOdd">
+                    <li class="list-group-item" *ngFor="let odd of oddNumbers" [ngClass]="{odd: odd % 2 !== 0}"
+                        [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'green' : 'transparent'}">
+                        {{odd}}
+                    </li>
+                </div>
+
                 <div *ngIf="!onlyOdd">
                     <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}"
                         [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'green' : 'transparent'}" *ngFor="let even of
@@ -20,7 +39,17 @@
                 </div>
             </ul>
             <p appBasicHighLight> style with with directive</p>
-            <p appBetterHighlight> style with with better directive</p>
+            <p appBetterHighlight [defaultCiolor]="'yellow'" [highlightCiolor]="'red'"> style with with better directive
+            </p>
+
+            <div [ngSwitch]="value">
+                <p *ngSwitchCase="5"> Value is 5</p>
+                <p *ngSwitchCase="10"> Value is 10</p>
+                <p *ngSwitchCase="100"> Value is 100</p>
+                <p *ngSwitchDefault> Value is default</p>
+
+            </div>
+
         </div>
     </div>
 </div>
