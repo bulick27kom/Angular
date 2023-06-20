@@ -1,5 +1,5 @@
 export type AccountStatus = 'active' | 'inactive' | 'unknown';
-export interface Account {
+export interface IAccount {
   name: string;
   status: AccountStatus;
 }

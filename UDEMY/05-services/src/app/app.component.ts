@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Account } from './shared/account.model';
+import { IAccount } from './shared/account.model';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { Account } from './shared/account.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  accounts: Account[] = [
+  accounts: IAccount[] = [
     {
       name: 'Master Account',
       status: 'unknown',
@@ -22,7 +22,7 @@ export class AppComponent {
     },
   ];
 
-  onAddNewAccount(account: Account) {
+  onAddNewAccount(account: IAccount) {
     this.accounts.push(account);
     console.log('accounts :>> ', this.accounts);
   }
