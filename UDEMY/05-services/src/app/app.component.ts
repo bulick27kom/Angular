@@ -10,7 +10,7 @@ export class AppComponent {
   accounts: IAccount[] = [
     {
       name: 'Master Account',
-      status: 'unknown',
+      status: 'active',
     },
     {
       name: 'Testaccount',
@@ -24,6 +24,11 @@ export class AppComponent {
 
   onAddNewAccount(account: IAccount) {
     this.accounts.push(account);
-    console.log('accounts :>> ', this.accounts);
+  }
+
+  accountSatausChanged(account) {
+    this.accounts.find((element) => {
+      element.name === account.name;
+    }).status = account.status;
   }
 }

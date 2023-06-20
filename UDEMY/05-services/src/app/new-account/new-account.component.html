@@ -3,7 +3,12 @@
         <div class="col-xl-8">
             <label for="">Account Name</label>
             <input type="text" class="form-control" placeholder="Account name" [(ngModel)]="accountName">
-            <input type="text" class="form-control" placeholder="Status" [(ngModel)]="accountStatus">
+            <!-- <input type="text" class="form-control" placeholder="Status" [(ngModel)]="accountStatus"> -->
+            <select class="form-select" [(ngModel)]="accountStatus">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="unknown" selected>Unknown</option>
+            </select>
             <button type="button" class="btn btn-primary" (click)="onAddNewAccount()">Add Account</button>
         </div>
     </div>

@@ -1,2 +1,5 @@
+
 <app-new-component (addNewAccount)="onAddNewAccount($event)"></app-new-component>
-<app-account *ngFor="let account of accounts" []></app-account>
+
+<app-account *ngFor="let account of accounts" [accountData]="account"
+    (accountSatausChanged)="accountSatausChanged($event)"></app-account>
