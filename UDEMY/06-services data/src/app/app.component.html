@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offst-2">
+            <app-new-component></app-new-component>
+            <hr>
+            <app-account *ngFor="let account of accounts" [accountData]="account"></app-account>
+        </div>
+    </div>
+</div>
