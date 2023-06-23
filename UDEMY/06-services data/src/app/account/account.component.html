@@ -1,12 +1,19 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-8">
-            <h3>{{accountData.name}}</h3>
-            <hr>
-            <p>This account is {{accountData.status}}</p>
-            <button type="button" (click)="onChangeStatus('active')">Set to 'active'</button>
-            <button type="button" (click)="onChangeStatus('inactive')">Set to 'inactive'</button>
-            <button type="button" (click)="onChangeStatus('unknown')">Set to 'unknown'</button>
+            <div class="cards">
+                <h3>{{accountData.name}}</h3>
+                <hr>
+                <p>This account is {{accountData.status}}</p>
+                <div class="btn-group">
+                    <button class="btn btn-info" type="button" (click)="onChangeStatus('active')">Set to
+                        'active'</button>
+                    <button class="btn btn-secondary" type="button" (click)="onChangeStatus('inactive')">Set to
+                        'inactive'</button>
+                    <button class="btn btn-danger" type="button" (click)="onChangeStatus('unknown')">Set to
+                        'unknown'</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

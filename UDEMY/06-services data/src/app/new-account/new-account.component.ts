@@ -15,7 +15,13 @@ export class NewAccount {
   accountStatus: AccountStatus = 'unknown';
 
   constructor(private accountsService: AccountsService) {
-    accountsService.statusUpdateEvent.subscribe();
+    this.accountsService.statusUpdatedEvent.subscribe(
+      (updatedAccount: IAccount) => {
+        alert(
+          `Account ${updatedAccount.name} has change status to ${updatedAccount.status}`
+        );
+      }
+    );
   }
 
   onAddNewAccount() {

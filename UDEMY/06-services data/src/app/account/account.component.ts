@@ -6,6 +6,7 @@ import { AccountsService } from '../services/accounts/accounts.service';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
+  styleUrls: ['./account.component.css'],
   // providers: [LoggingService],
 })
 export class Account {
@@ -19,7 +20,7 @@ export class Account {
   onChangeStatus(status: string) {
     this.accountData.status = AccountTypeGuard.accountStatusGuard(status);
     this.accountsService.changeAccountStatus(this.accountData);
-    this.accountsService.statusUpdateEvent.emit(this.accountData);
+    this.accountsService.statusUpdatedEvent.emit(this.accountData);
     // this.statusLogger.logStatusChange(this.accountData);
   }
 }

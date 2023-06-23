@@ -19,7 +19,7 @@ export class AccountsService {
     },
   ];
 
-  @Output() statusUpdateEvent = new EventEmitter<IAccount>();
+  @Output() statusUpdatedEvent = new EventEmitter<IAccount>();
 
   constructor(private loggingService: LoggingService) {}
 

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <h3>Active users</h3>
+        <div class="col-xl-12">
+            <p *ngFor="let user of users; let i = index ">
+                <li *ngIf="user.status === true">
+                {{user.name}} | <a (click)="onChangeActiveStatus(i)"> Set to Inactive</a>    
+                </li>
+            </p>
+        </div>
+    </div>
+</div>
