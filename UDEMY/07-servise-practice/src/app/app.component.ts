@@ -6,7 +6,7 @@ import { CounterServise } from './services/counter/counter.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [UsersServise, CounterServise],
+  providers: [UsersServise],
 })
 export class AppComponent implements OnInit {
   counter: CounterServise;
