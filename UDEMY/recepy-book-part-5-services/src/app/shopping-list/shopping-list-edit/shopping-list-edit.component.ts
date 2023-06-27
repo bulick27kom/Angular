@@ -6,6 +6,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { ShoppingListService } from 'src/app/services/shopping-list/shopping-list.service';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
@@ -14,10 +15,9 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
   styleUrls: ['./shopping-list-edit.component.css'],
 })
 export class ShoppingListEdit {
-  @Output() addIngredient = new EventEmitter<Ingredient>();
-  @Output() clearIngredients = new EventEmitter<void>();
-  @Output() deleteIngredient = new EventEmitter<Ingredient>();
-  @Input() ingredientClicked = new Ingredient('', 0);
+  constructor(private shoppingListService: ShoppingListService) {}
+
+  @Input() ingredientClicked: Ingredient = new Ingredient('', 0);
 
   @ViewChild('nameInput') nameInputRef!: ElementRef;
   @ViewChild('amountInput') amountInputRef!: ElementRef;
@@ -31,12 +31,12 @@ export class ShoppingListEdit {
       : 0;
 
     const ingredient = new Ingredient(ingredientName, ingredientAmount);
-
-    this.addIngredient.emit(ingredient);
+    if (ingredient.name != '')
+      this.shoppingListService.addIngredient(ingredient);
   }
 
   onClearIngredients() {
-    this.clearIngredients.emit();
+    this.shoppingListService.clearIngredients();
   }
 
   onDeleteIngredient() {
@@ -46,7 +46,7 @@ export class ShoppingListEdit {
     )
       return;
     else {
-      this.deleteIngredient.emit(this.ingredientClicked);
+      this.shoppingListService.deleteIngredient(this.ingredientClicked);
     }
   }
 }
