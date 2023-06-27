@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="selectedRecipe.imagePath" [alt]="selectedRecipe.name" class="img-responsive"
+            style="max-height: 200px;">
+    </div>
+    <div class="row">
+        <div class="col-cs-12">
+            <h1>
+                {{selectedRecipe.name}}
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="btn-group " role="group">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item  btn-primary" href="#">Add</a></li>
+                        <li><a class="dropdown-item  btn-warning" href="#">Edit</a></li>
+                        <li><a class="dropdown-item  btn-danger" href="#">Del</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 ">
+            <div class="btn-group " role="group">
+                <button appDropdown type="button" class="btn btn-primary dropdown-toggle "
+                    data-bs-toggle="dropdown">Manage
+                    recipe<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item  btn-primary" href="#">Add</a></li>
+                    <li><a class="dropdown-item  btn-warning" href="#">Edit</a></li>
+                    <li><a class="dropdown-item  btn-danger" href="#">Del</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        {{selectedRecipe.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        Ingredients
+    </div>
+</div>
