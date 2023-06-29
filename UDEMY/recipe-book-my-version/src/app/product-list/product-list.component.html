@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="column-8">
+            <ul>
+                <li *ngFor="let product of products; let i = index" (click)="showProductDescription(i)">
+                    <h3>{{product.name}}</h3>
+                    <img src={{product.imgPath}} alt="">
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-4">
+            <app-product-descrioprion [product]="selectedProduct"></app-product-descrioprion>
+        </div>
+    </div>
+
+</div>
