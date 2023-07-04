@@ -12,13 +12,13 @@ export class AutorizationService {
   login(email: string, password: string): void {
     this.autorized = true;
     this.autorizationStatusChanged.emit(this.autorized);
-    // fetch(this.tokenUrl, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ email: this.login, password: this.password }),
-    // });
+    fetch(this.tokenUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: this.login, password: this.password }),
+    });
   }
 
   logout() {

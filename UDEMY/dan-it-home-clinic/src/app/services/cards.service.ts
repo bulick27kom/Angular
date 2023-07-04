@@ -15,7 +15,5 @@ export class CardsService{
         return this.cards.slice();
       }
 
-      loadCardsFromServer(){
-
-      }
+      
 }
