@@ -11,11 +11,17 @@ export class Cards implements OnInit {
   cards: Card[];
   autorized: boolean;
 
-  constructor(private cardsServise: CardsService, private autorizeServise: AutorizationService) {
+  constructor(
+    private cardsServise: CardsService,
+    private autorizeServise: AutorizationService
+  ) {
     this.autorized = autorizeServise.autorized;
-    autorizeServise.autorizationStatusChanged.subscribe(()=>{
+    autorizeServise.autorizationStatusChanged.subscribe(() => {
       this.autorized = autorizeServise.autorized;
-    })
+      if (this.autorizeServise.autorized) {
+        this.cardsServise.getAllCardsFromServer();
+      }
+    });
   }
 
   ngOnInit(): void {

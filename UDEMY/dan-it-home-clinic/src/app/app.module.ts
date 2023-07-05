@@ -8,9 +8,10 @@ import { Cards } from './cards/cards.component';
 import { CardsService } from './services/cards.service';
 import { Login } from './header/login/login.component';
 import { AutorizationService } from './services/autorization.service';
+import { FiltersComponent } from './cards/filters/filters.component';
 
 @NgModule({
-  declarations: [AppComponent, Header, Cards, Login],
+  declarations: [AppComponent, Header, Cards, Login, FiltersComponent],
   imports: [BrowserModule, FormsModule],
   providers: [CardsService, AutorizationService],
   bootstrap: [AppComponent],

@@ -20,3 +20,7 @@
     <h3>Welcome to Home clinic</h3>
     <button class="btn btn-warning" (click)="onLogout()">Logout</button>
 </div>
+
+<div *ngIf="autorized">
+    <button class="btn btn-primary" (click)="createNewVisit()">New visit</button>
+</div>

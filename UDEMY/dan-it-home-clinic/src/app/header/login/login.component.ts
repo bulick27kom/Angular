@@ -24,4 +24,8 @@ export class Login {
   onLogout() {
     this.autorizationServise.logout();
   }
+
+  createNewVisit(){
+    
+  }
 }
