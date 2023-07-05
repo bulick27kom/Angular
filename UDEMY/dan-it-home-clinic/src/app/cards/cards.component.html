@@ -1,3 +1,7 @@
+<h3 *ngIf="!autorized || cards.length=== 0">
+    No items have been added
+</h3>
+
 <div *ngIf="autorized">
     <app-filters></app-filters>
     <p *ngFor="let card of cards">

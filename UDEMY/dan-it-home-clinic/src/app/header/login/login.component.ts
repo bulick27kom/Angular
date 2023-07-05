@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AutorizationService } from 'src/app/services/autorization.service';
 
 @Component({
@@ -6,6 +6,7 @@ import { AutorizationService } from 'src/app/services/autorization.service';
   templateUrl: './login.component.html',
 })
 export class Login {
+  @Output() closeLoginForm = new EventEmitter<void>();
   autorized: boolean;
   email;
   password;
@@ -21,11 +22,8 @@ export class Login {
     this.email = '';
     this.password = '';
   }
-  onLogout() {
-    this.autorizationServise.logout();
-  }
-
-  createNewVisit(){
-    
+  
+  onCloseLoginWindow() {
+    this.closeLoginForm.emit();
   }
 }

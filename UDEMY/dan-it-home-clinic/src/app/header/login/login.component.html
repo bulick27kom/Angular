@@ -12,15 +12,6 @@
     </div>
 
     <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4" (click)="onLogin()">Sign in</button>
-
+    <button class="btn btn-primary btn-block mb-4" (click)="onLogin()">Sign in</button>
+    <button class="btn btn-danger btn-block mb-4" (click)="onCloseLoginWindow()">Close</button>
 </form>
-
-<div *ngIf="autorized">
-    <h3>Welcome to Home clinic</h3>
-    <button class="btn btn-warning" (click)="onLogout()">Logout</button>
-</div>
-
-<div *ngIf="autorized">
-    <button class="btn btn-primary" (click)="createNewVisit()">New visit</button>
-</div>

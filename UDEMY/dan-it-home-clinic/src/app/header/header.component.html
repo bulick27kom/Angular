@@ -2,7 +2,16 @@
     <div class="col-8">
         <h1>Home clinic</h1>
     </div>
-    <div class="col-4">
-        <app-login></app-login>
+    <div class="col-4" *ngIf="!autorised">
+        <app-login *ngIf="showLoginWindow" (closeLoginForm)="onloginFormClose()"></app-login>
+        <button class="btn btn-primary" *ngIf="!showLoginWindow" (click)="onShowLoginWindow()"> Login</button>
     </div>
+    <div class="col-4" *ngIf="autorised">
+        <button class="btn btn-primary"> Create visit</button>
+        <button
+                class="btn btn-primary"
+                (click)="onLogout()"> Logout</button>
+    </div>
+
+
 </div>
